@@ -6,9 +6,9 @@ const Welcome = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center min-h-screen p-4 text-center"
+      className="flex flex-col items-center justify-start min-h-screen p-4 text-center pt-20"
     >
-      <h1 className="text-6xl font-bold text-gray-800 mb-4 font-['Unbounded']">
+      <h1 className="text-3xl font-bold text-gray-800 font-['Unbounded']">
         Moodern design
       </h1>
     </motion.div>
