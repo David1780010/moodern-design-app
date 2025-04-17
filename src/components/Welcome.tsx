@@ -6,12 +6,12 @@ const Welcome = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-start min-h-screen p-4 text-center pt-32"
+      className="flex flex-col items-start px-8 justify-start min-h-screen pt-32"
     >
-      <h1 className="text-3xl font-bold text-black font-['Unbounded'] mb-8">
+      <h1 className="text-4xl font-bold text-black font-['Unbounded'] mb-16 mx-auto">
         Moodern design
       </h1>
-      <div className="text-lg leading-[1.1] font-sans max-w-[1200px] text-black text-left">
+      <div className="text-2xl leading-normal font-sans max-w-[600px] text-black text-left">
         тут вы найдете современный, стильный, проффесиональный дизайн от moodern design,вы можете заказать:
       </div>
     </motion.div>
