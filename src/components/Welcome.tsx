@@ -1,6 +1,22 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+
+declare global {
+  interface Window {
+    Telegram: {
+      WebApp: any;
+    };
+  }
+}
 
 const Welcome = () => {
+  useEffect(() => {
+    // Включаем подтверждение закрытия
+    if (window.Telegram?.WebApp) {
+      window.Telegram.WebApp.enableClosingConfirmation();
+    }
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
