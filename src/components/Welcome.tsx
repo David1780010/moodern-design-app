@@ -11,7 +11,7 @@ const Welcome = () => {
       <h1 className="text-3xl font-bold text-black font-['Unbounded'] mb-8">
         Moodern design
       </h1>
-      <div className="text-[175px] leading-[1.1] font-sans max-w-[1200px] text-black text-left">
+      <div className="text-lg leading-[1.1] font-sans max-w-[1200px] text-black text-left">
         тут вы найдете современный, стильный, проффесиональный дизайн от moodern design,вы можете заказать:
       </div>
     </motion.div>
