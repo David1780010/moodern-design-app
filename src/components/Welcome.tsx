@@ -12,7 +12,13 @@ const Welcome = () => {
         Moodern design
       </h1>
       <div className="text-[26px] leading-normal font-medium font-sans max-w-[500px] text-black text-left px-8">
-        тут вы найдете современный, стильный, проффесиональный дизайн от moodern design,вы можете заказать:
+        тут вы найдете{' '}<br />
+        современный,{' '}<br />
+        стильный,{' '}<br />
+        проффесиональный{' '}<br />
+        дизайн от moodern{' '}<br />
+        design,вы можете{' '}<br />
+        заказать:
       </div>
     </motion.div>
   );
