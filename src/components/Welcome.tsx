@@ -8,7 +8,7 @@ const Welcome = () => {
       transition={{ duration: 0.5 }}
       className="flex flex-col items-center justify-start min-h-screen p-4 text-center pt-20"
     >
-      <h1 className="text-3xl font-bold text-gray-800 font-['Unbounded']">
+      <h1 className="text-3xl font-bold text-black font-['Unbounded']">
         Moodern design
       </h1>
     </motion.div>
