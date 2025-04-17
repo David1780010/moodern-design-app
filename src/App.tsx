@@ -15,12 +15,6 @@ function App() {
   return (
     <div className="App" ref={appRef}>
       <Welcome />
-      <button
-        onClick={handleFullscreenClick}
-        className="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Полноэкранный режим
-      </button>
     </div>
   );
 }
