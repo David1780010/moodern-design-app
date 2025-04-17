@@ -8,7 +8,7 @@ const Welcome = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen pt-32 w-full"
     >
-      <h1 className="text-3xl font-bold text-black font-['Unbounded'] mb-16 text-center">
+      <h1 className="text-3xl font-bold text-black font-['Unbounded'] mb-16">
         Moodern design
       </h1>
       <div className="w-full pl-8">
@@ -22,9 +22,9 @@ const Welcome = () => {
           заказать:
         </div>
         <img 
-          src="/Screenshot 2025-04-17 at 21.20.10.png" 
-          alt="Welcome illustration" 
-          className="mt-8 max-w-[500px] w-full object-contain"
+          src="https://github.com/David1780010/moodern-design-app/blob/main/Screenshot%202025-04-17%20at%2021.20.10.png?raw=true"
+          alt="Moodern Design Preview"
+          className="mt-8 max-w-full"
         />
       </div>
     </motion.div>
