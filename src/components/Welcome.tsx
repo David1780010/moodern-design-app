@@ -1,22 +1,18 @@
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
+import '@twa-dev/types';
 
 declare global {
   interface Window {
-    Telegram: {
-      WebApp: {
-        disableClosingConfirmation: () => void;
-        disableSwipeToClose: () => void;
-      };
-    };
+    Telegram: any;
   }
 }
 
 const Welcome = () => {
   useEffect(() => {
-    // Отключаем жест закрытия приложения
+    // Инициализируем приложение
     if (window.Telegram?.WebApp) {
-      window.Telegram.WebApp.disableSwipeToClose();
+      window.Telegram.WebApp.ready();
     }
   }, []);
 
