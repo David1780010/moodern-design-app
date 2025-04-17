@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Welcome from './components/Welcome';
+import { useFullscreen } from './hooks/useFullscreen';
 
 function App() {
+  const appRef = useRef<HTMLDivElement>(null);
+  const { launchIntoFullscreen } = useFullscreen();
+
   useEffect(() => {
     // Инициализация Telegram WebApp
     if (window.Telegram?.WebApp) {
@@ -10,25 +14,13 @@ function App() {
     }
 
     // Запрос на полноэкранный режим
-    const requestFullscreen = async () => {
-      try {
-        if (document.documentElement.requestFullscreen) {
-          await document.documentElement.requestFullscreen();
-        } else if ((document.documentElement as any).webkitRequestFullscreen) {
-          await (document.documentElement as any).webkitRequestFullscreen();
-        } else if ((document.documentElement as any).msRequestFullscreen) {
-          await (document.documentElement as any).msRequestFullscreen();
-        }
-      } catch (error) {
-        console.error('Ошибка при запросе полноэкранного режима:', error);
-      }
-    };
-
-    requestFullscreen();
-  }, []);
+    if (appRef.current) {
+      launchIntoFullscreen(appRef.current);
+    }
+  }, [launchIntoFullscreen]);
 
   return (
-    <div className="App">
+    <div className="App" ref={appRef}>
       <Welcome />
     </div>
   );
