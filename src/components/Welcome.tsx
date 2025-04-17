@@ -8,7 +8,7 @@ const Welcome = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen pt-32 w-full"
     >
-      <h1 className="text-3xl font-bold text-black font-['Unbounded'] mb-16">
+      <h1 className="text-3xl font-bold text-black font-['Unbounded'] mb-16 text-center">
         Moodern design
       </h1>
       <div className="w-full pl-8">
