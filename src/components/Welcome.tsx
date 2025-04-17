@@ -1,21 +1,6 @@
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
-import '@twa-dev/types';
-
-declare global {
-  interface Window {
-    Telegram: any;
-  }
-}
 
 const Welcome = () => {
-  useEffect(() => {
-    // Инициализируем приложение
-    if (window.Telegram?.WebApp) {
-      window.Telegram.WebApp.ready();
-    }
-  }, []);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -27,7 +12,7 @@ const Welcome = () => {
         Moodern design
       </h1>
       <div className="w-full pl-8">
-        <div className="text-[26px] leading-normal font-bold max-w-[500px] text-black text-left">
+        <div className="text-[26px] leading-normal font-bold font-['SF Pro Rounded'] max-w-[500px] text-black text-left">
           тут вы найдете{' '}<br />
           современный,{' '}<br />
           стильный,{' '}<br />
@@ -36,11 +21,6 @@ const Welcome = () => {
           design,вы можете{' '}<br />
           заказать:
         </div>
-        <img 
-          src="https://github.com/David1780010/moodern-design-app/blob/main/Screenshot%202025-04-17%20at%2021.20.10.png?raw=true"
-          alt="Moodern Design Preview"
-          className="mt-8 max-w-full -ml-4"
-        />
       </div>
     </motion.div>
   );
