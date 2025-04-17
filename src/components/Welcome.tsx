@@ -11,7 +11,7 @@ const Welcome = () => {
       <h1 className="text-3xl font-bold text-black font-['Unbounded'] mb-16">
         Moodern design
       </h1>
-      <div className="text-[26px] leading-normal font-semibold font-sans max-w-[500px] text-black text-left pl-4">
+      <div className="text-[26px] leading-normal font-semibold font-sans max-w-[500px] text-black text-left pl-4 mx-auto">
         тут вы найдете{' '}<br />
         современный,{' '}<br />
         стильный,{' '}<br />
