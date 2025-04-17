@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap');
 
-@font-face {
-  font-family: 'SF Pro Rounded';
-  src: url('/fonts/SF-Pro-Rounded-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
