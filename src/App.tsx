@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { WebApp } from '@twa-dev/sdk'
+import WebApp from '@twa-dev/sdk'
 import { motion } from 'framer-motion'
 
 function App() {
