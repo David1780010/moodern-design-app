@@ -4,16 +4,19 @@ import { useEffect } from 'react';
 declare global {
   interface Window {
     Telegram: {
-      WebApp: any;
+      WebApp: {
+        disableClosingConfirmation: () => void;
+        disableSwipeToClose: () => void;
+      };
     };
   }
 }
 
 const Welcome = () => {
   useEffect(() => {
-    // Включаем подтверждение закрытия
+    // Отключаем жест закрытия приложения
     if (window.Telegram?.WebApp) {
-      window.Telegram.WebApp.enableClosingConfirmation();
+      window.Telegram.WebApp.disableSwipeToClose();
     }
   }, []);
 
