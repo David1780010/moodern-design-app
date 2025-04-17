@@ -24,7 +24,7 @@ const Welcome = () => {
         <img 
           src="https://github.com/David1780010/moodern-design-app/blob/main/Screenshot%202025-04-17%20at%2021.20.10.png?raw=true"
           alt="Moodern Design Preview"
-          className="mt-8 max-w-full"
+          className="mt-8 max-w-full -ml-4"
         />
       </div>
     </motion.div>
