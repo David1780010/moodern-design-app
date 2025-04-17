@@ -12,7 +12,7 @@ const Welcome = () => {
         Moodern design
       </h1>
       <div className="w-full pl-8">
-        <div className="text-[26px] leading-normal font-bold max-w-[500px] text-black text-left">
+        <div className="text-[26px] leading-normal font-bold font-['SF Pro Rounded'] max-w-[500px] text-black text-left">
           тут вы найдете{' '}<br />
           современный,{' '}<br />
           стильный,{' '}<br />
