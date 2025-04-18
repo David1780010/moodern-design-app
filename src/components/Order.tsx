@@ -15,12 +15,12 @@ const Order = () => {
       </h1>
 
       <div className="grid grid-cols-1 gap-4 max-w-[480px] mx-auto">
-        <div className="h-[125px] rounded-[24px] bg-gradient-to-b from-[#D581FF] via-[#ECCEFA] to-[#EAEAEA] p-4 flex flex-col justify-between">
-          <div className="space-y-1">
-            <h2 className="text-xl font-['Unbounded'] text-black">UI / UX design</h2>
+        <div className="h-[125px] rounded-[24px] bg-gradient-to-b from-[#D581FF] via-[#ECCEFA] to-[#EAEAEA] p-4 flex flex-col justify-start">
+          <div className="space-y-2 -mt-1">
+            <h2 className="text-xl font-['Unbounded'] font-semibold text-black">UI / UX design</h2>
             <p className="text-sm text-black/70 font-['Unbounded']">профессиональный дизайн который сделают быстро</p>
           </div>
-          <button className="bg-black text-white font-['Unbounded'] text-sm py-2 px-4 rounded-full w-fit">
+          <button className="bg-black text-white font-['Unbounded'] text-sm py-2 px-4 rounded-lg w-fit mt-3">
             заказать
           </button>
         </div>
