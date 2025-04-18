@@ -15,14 +15,16 @@ const Order = () => {
       </h1>
 
       <div className="grid grid-cols-1 gap-4 max-w-[480px] mx-auto">
-        <div className="h-[125px] rounded-[24px] bg-gradient-to-b from-[#D581FF] via-[#ECCEFA] to-[#EAEAEA] p-4 flex flex-col justify-start">
-          <div className="space-y-2 -mt-1">
+        <div className="h-[125px] rounded-[24px] bg-gradient-to-b from-[#D581FF] via-[#ECCEFA] to-[#EAEAEA] p-4 flex flex-col">
+          <div className="space-y-2 -mt-2">
             <h2 className="text-xl font-['Unbounded'] font-semibold text-black">UI / UX design</h2>
             <p className="text-sm text-black/70 font-['Unbounded']">профессиональный дизайн который сделают быстро</p>
           </div>
-          <button className="bg-black text-white font-['Unbounded'] text-sm py-2 px-4 rounded-lg w-fit mt-3">
-            заказать
-          </button>
+          <div className="flex-grow flex items-end">
+            <button className="bg-black text-white font-['Unbounded'] text-sm py-2 px-4 rounded-lg w-fit">
+              заказать
+            </button>
+          </div>
         </div>
 
         <div className="h-[125px] rounded-[24px] bg-gradient-to-b from-[#D581FF] via-[#ECCEFA] to-[#EAEAEA] p-4 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
