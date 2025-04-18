@@ -1,21 +1,19 @@
-import React, { useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from './components/Welcome';
-import { useFullscreen } from './hooks/useFullscreen';
+import Navigation from './components/Navigation';
 
 function App() {
-  const appRef = useRef<HTMLDivElement>(null);
-  const { launchIntoFullscreen } = useFullscreen();
-
-  const handleFullscreenClick = () => {
-    if (appRef.current) {
-      launchIntoFullscreen(appRef.current);
-    }
-  };
-
   return (
-    <div className="App" ref={appRef}>
-      <Welcome />
-    </div>
+    <Router>
+      <div className="relative min-h-screen">
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/order" element={<div className="min-h-screen pt-32">Страница заказа</div>} />
+          <Route path="/profile" element={<div className="min-h-screen pt-32">Страница профиля</div>} />
+        </Routes>
+        <Navigation />
+      </div>
+    </Router>
   );
 }
 
