@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
 import Welcome from './components/Welcome';
 import Order from './components/Order';
 import Profile from './components/Profile';
@@ -10,30 +9,9 @@ function App() {
     <Router>
       <div className="relative min-h-screen">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <AnimatePresence mode="wait">
-                <Welcome />
-              </AnimatePresence>
-            }
-          />
-          <Route
-            path="/order"
-            element={
-              <AnimatePresence mode="wait">
-                <Order />
-              </AnimatePresence>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <AnimatePresence mode="wait">
-                <Profile />
-              </AnimatePresence>
-            }
-          />
+          <Route path="/" element={<Welcome />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Navigation />
       </div>
