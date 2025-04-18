@@ -11,18 +11,43 @@ function AppContent() {
   useEffect(() => {
     const twa = window.Telegram?.WebApp;
     if (twa) {
-      // Сообщаем, что приложение готово
+      // Инициализация приложения
       twa.ready();
-      
-      // Разворачиваем на весь экран
       twa.expand();
       
-      // Включаем подтверждение закрытия
+      // Блокируем закрытие свайпом
       twa.enableClosingConfirmation();
-      
-      // Устанавливаем цвет фона
       twa.setBackgroundColor('#ffffff');
       
+      // Предотвращаем закрытие через свайп
+      const preventClose = (e: TouchEvent) => {
+        const touch = e.touches[0];
+        const startY = touch?.clientY ?? 0;
+        
+        const handleTouchMove = (e: TouchEvent) => {
+          const moveY = e.touches[0]?.clientY ?? 0;
+          const deltaY = moveY - startY;
+          
+          // Если свайп вниз, блокируем его
+          if (deltaY > 10) {
+            e.preventDefault();
+          }
+        };
+        
+        document.addEventListener('touchmove', handleTouchMove, { passive: false });
+        
+        const cleanup = () => {
+          document.removeEventListener('touchmove', handleTouchMove);
+          document.removeEventListener('touchend', cleanup);
+          document.removeEventListener('touchcancel', cleanup);
+        };
+        
+        document.addEventListener('touchend', cleanup, { once: true });
+        document.addEventListener('touchcancel', cleanup, { once: true });
+      };
+      
+      document.addEventListener('touchstart', preventClose, { passive: true });
+
       const isOrderPage = location.pathname === '/order';
       const root = document.getElementById('root');
       
@@ -98,6 +123,7 @@ function AppContent() {
 
       // Очистка при размонтировании
       return () => {
+        document.removeEventListener('touchstart', preventClose);
         document.removeEventListener('touchstart', preventDefaultTouch);
         document.removeEventListener('touchmove', preventDefaultTouch);
         document.removeEventListener('gesturestart', preventZoom as EventListener);

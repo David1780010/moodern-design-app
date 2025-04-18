@@ -6,6 +6,9 @@ declare namespace Telegram {
     setBackgroundColor: (color: string) => void;
     enableClosingConfirmation: () => void;
     disableClosingConfirmation: () => void;
+    isClosingConfirmationEnabled: boolean;
+    onEvent: (eventType: string, eventHandler: Function) => void;
+    offEvent: (eventType: string, eventHandler: Function) => void;
     isExpanded: boolean;
     viewportHeight: number;
     viewportStableHeight: number;
