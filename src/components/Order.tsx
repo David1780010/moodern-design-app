@@ -10,7 +10,7 @@ const Order = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen pt-20 px-6"
     >
-      <h1 className="text-2xl font-['Unbounded'] mb-8 text-center">
+      <h1 className="text-2xl font-['Unbounded'] mb-8 text-center mt-1">
         Выберите нужную вам услугу
       </h1>
 
