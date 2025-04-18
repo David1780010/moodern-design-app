@@ -9,13 +9,32 @@ function App() {
   return (
     <Router>
       <div className="relative min-h-screen">
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/order" element={<Order />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </AnimatePresence>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <AnimatePresence mode="wait">
+                <Welcome />
+              </AnimatePresence>
+            }
+          />
+          <Route
+            path="/order"
+            element={
+              <AnimatePresence mode="wait">
+                <Order />
+              </AnimatePresence>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <AnimatePresence mode="wait">
+                <Profile />
+              </AnimatePresence>
+            }
+          />
+        </Routes>
         <Navigation />
       </div>
     </Router>
