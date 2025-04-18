@@ -16,8 +16,8 @@ const Order = () => {
 
       <div className="grid grid-cols-1 gap-4 max-w-[480px] mx-auto">
         <div className="h-[125px] rounded-[24px] bg-gradient-to-b from-[#D581FF] via-[#ECCEFA] to-[#EAEAEA] p-4 flex flex-col">
-          <div className="space-y-2 -mt-2">
-            <h2 className="text-xl font-['Unbounded'] font-semibold text-black">UI / UX design</h2>
+          <div className="space-y-2 -mt-3">
+            <h2 className="text-xl font-['Unbounded'] font-semibold">UI / UX design</h2>
             <p className="text-sm text-black/70 font-['Unbounded']">профессиональный дизайн который сделают быстро</p>
           </div>
           <div className="flex-grow flex items-end">
