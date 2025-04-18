@@ -3,6 +3,12 @@ declare namespace Telegram {
     ready: () => void;
     expand: () => void;
     close: () => void;
+    setBackgroundColor: (color: string) => void;
+    enableClosingConfirmation: () => void;
+    disableClosingConfirmation: () => void;
+    isExpanded: boolean;
+    viewportHeight: number;
+    viewportStableHeight: number;
     initData: string;
     initDataUnsafe: {
       user?: {
@@ -16,14 +22,8 @@ declare namespace Telegram {
   }
 }
 
-interface TelegramWebApp {
-  expand: () => void;
-  setBackgroundColor: (color: string) => void;
-  enableClosingConfirmation: () => void;
-}
-
 interface Window {
   Telegram?: {
-    WebApp: TelegramWebApp;
+    WebApp: Telegram.WebApp;
   };
 } 

@@ -7,30 +7,41 @@ import Navigation from './components/Navigation';
 
 function App() {
   useEffect(() => {
-    if (window.Telegram?.WebApp) {
-      // Блокируем закрытие при свайпе вниз
-      window.Telegram.WebApp.setBackgroundColor('#ffffff');
-      window.Telegram.WebApp.enableClosingConfirmation();
+    const twa = window.Telegram?.WebApp;
+    if (twa) {
+      // Сообщаем, что приложение готово
+      twa.ready();
       
-      // Отключаем zoom
-      window.Telegram.WebApp.expand();
+      // Разворачиваем на весь экран
+      twa.expand();
+      
+      // Включаем подтверждение закрытия
+      twa.enableClosingConfirmation();
+      
+      // Устанавливаем цвет фона
+      twa.setBackgroundColor('#ffffff');
       
       // Блокируем нативные жесты
       const style = document.createElement('style');
       style.textContent = `
-        body {
-          overscroll-behavior: none;
-          touch-action: pan-y pinch-zoom;
-          -webkit-overflow-scrolling: touch;
-          overflow: hidden;
+        html, body {
+          overscroll-behavior: none !important;
+          touch-action: none !important;
           position: fixed;
           width: 100%;
           height: 100%;
+          overflow: hidden;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          user-select: none;
+          -webkit-tap-highlight-color: transparent;
         }
         #root {
-          overflow-y: auto;
           height: 100%;
-          width: 100%;
+          overflow-y: auto;
+          overflow-x: hidden;
+          position: relative;
+          -webkit-overflow-scrolling: touch;
         }
       `;
       document.head.appendChild(style);
