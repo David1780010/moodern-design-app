@@ -21,7 +21,7 @@ const Order = () => {
             <p className="text-sm text-black/70 font-['Unbounded']">профессиональный дизайн который сделают быстро</p>
           </div>
           <div className="flex-grow flex items-end">
-            <button className="bg-black text-white font-['Unbounded'] text-sm py-2 px-4 rounded-lg w-fit">
+            <button className="bg-black text-white font-['Unbounded'] text-sm py-[6px] px-6 rounded-lg w-fit">
               заказать
             </button>
           </div>
