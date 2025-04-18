@@ -1,11 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Welcome from './components/Welcome';
 import Order from './components/Order';
 import Profile from './components/Profile';
 import Navigation from './components/Navigation';
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+
   useEffect(() => {
     const twa = window.Telegram?.WebApp;
     if (twa) {
@@ -21,9 +23,12 @@ function App() {
       // Устанавливаем цвет фона
       twa.setBackgroundColor('#ffffff');
       
+      const isOrderPage = location.pathname === '/order';
+      const root = document.getElementById('root');
+      
       // Блокируем все touch-события на документе
       const preventDefaultTouch = (e: TouchEvent) => {
-        if (e.touches.length > 1) {
+        if (e.touches.length > 1 || !isOrderPage) {
           e.preventDefault();
         }
       };
@@ -33,7 +38,9 @@ function App() {
       };
 
       const preventScroll = (e: Event) => {
-        e.preventDefault();
+        if (!isOrderPage) {
+          e.preventDefault();
+        }
       };
 
       // Добавляем обработчики событий
@@ -43,14 +50,14 @@ function App() {
       document.addEventListener('gesturechange', preventZoom as EventListener, { passive: false });
       document.addEventListener('gestureend', preventZoom as EventListener, { passive: false });
       
-      // Разрешаем скролл только внутри #root
-      const root = document.getElementById('root');
       if (root) {
         document.body.addEventListener('touchmove', preventScroll, { passive: false });
-        root.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
+        if (isOrderPage) {
+          root.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
+        }
       }
       
-      // Блокируем нативные жесты через CSS
+      // Обновляем стили в зависимости от страницы
       const style = document.createElement('style');
       style.textContent = `
         html, body {
@@ -72,19 +79,19 @@ function App() {
         
         #root {
           height: 100%;
-          overflow-y: auto;
+          overflow-y: ${isOrderPage ? 'auto' : 'hidden'};
           overflow-x: hidden;
           position: relative;
           -webkit-overflow-scrolling: touch;
           overscroll-behavior-y: contain;
-          touch-action: pan-y !important;
+          touch-action: ${isOrderPage ? 'pan-y' : 'none'} !important;
         }
         
         * {
           -webkit-touch-callout: none !important;
           -webkit-user-select: none !important;
           user-select: none !important;
-          touch-action: none !important;
+          touch-action: ${isOrderPage ? 'pan-y' : 'none'} !important;
         }
       `;
       document.head.appendChild(style);
@@ -99,20 +106,27 @@ function App() {
         if (root) {
           document.body.removeEventListener('touchmove', preventScroll);
         }
+        style.remove();
       };
     }
-  }, []);
+  }, [location.pathname]);
 
   return (
+    <div className="relative min-h-screen">
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+      <Navigation />
+    </div>
+  );
+}
+
+function App() {
+  return (
     <Router>
-      <div className="relative min-h-screen">
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/order" element={<Order />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-        <Navigation />
-      </div>
+      <AppContent />
     </Router>
   );
 }
