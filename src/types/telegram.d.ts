@@ -1,4 +1,28 @@
 declare namespace Telegram {
+  interface MainButton {
+    text: string;
+    color: string;
+    textColor: string;
+    isVisible: boolean;
+    isActive: boolean;
+    isProgressVisible: boolean;
+    setText: (text: string) => void;
+    onClick: (callback: Function) => void;
+    show: () => void;
+    hide: () => void;
+    enable: () => void;
+    disable: () => void;
+    showProgress: (leaveActive: boolean) => void;
+    hideProgress: () => void;
+  }
+
+  interface BackButton {
+    isVisible: boolean;
+    onClick: (callback: Function) => void;
+    show: () => void;
+    hide: () => void;
+  }
+
   interface WebApp {
     ready: () => void;
     expand: () => void;
@@ -13,6 +37,10 @@ declare namespace Telegram {
     viewportHeight: number;
     viewportStableHeight: number;
     setViewportHeight: (height: number) => void;
+    MainButton: MainButton;
+    BackButton: BackButton;
+    platform: string;
+    version: string;
     initData: string;
     initDataUnsafe: {
       user?: {

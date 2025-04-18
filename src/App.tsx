@@ -11,42 +11,32 @@ function AppContent() {
   useEffect(() => {
     const twa = window.Telegram?.WebApp;
     if (twa) {
-      // Блокируем закрытие свайпом
-      twa.enableClosingConfirmation();
-      twa.expand();
+      // Инициализация WebApp
       twa.ready();
+      twa.expand();
+      
+      // Настраиваем MainButton для блокировки жестов
+      twa.MainButton.hide();
+      
+      // Включаем строгую блокировку закрытия
+      twa.enableClosingConfirmation();
       twa.setBackgroundColor('#ffffff');
-      twa.setViewportHeight(100);
       
       // Блокируем все жесты свайпа
       const style = document.createElement('style');
       style.textContent = `
         html, body {
-          overscroll-behavior: none !important;
-          touch-action: none !important;
           position: fixed !important;
           width: 100% !important;
           height: 100% !important;
           overflow: hidden !important;
+          overscroll-behavior: none !important;
+          touch-action: none !important;
+          -webkit-overflow-scrolling: touch !important;
           -webkit-touch-callout: none !important;
           -webkit-user-select: none !important;
           user-select: none !important;
           -webkit-tap-highlight-color: transparent !important;
-          max-width: 100vw !important;
-          max-height: 100vh !important;
-          margin: 0 !important;
-          padding: 0 !important;
-          -webkit-overflow-scrolling: touch !important;
-          touch-action: manipulation !important;
-          -webkit-user-drag: none !important;
-          -ms-touch-action: none !important;
-          -ms-content-zooming: none !important;
-          -ms-scroll-chaining: none !important;
-          -ms-content-zooming: none !important;
-          -ms-touch-select: none !important;
-          -webkit-touch-callout: none !important;
-          -webkit-user-drag: none !important;
-          pointer-events: auto !important;
         }
         
         #root {
@@ -58,35 +48,38 @@ function AppContent() {
           overscroll-behavior-y: contain !important;
           touch-action: ${location.pathname === '/order' ? 'pan-y' : 'none'} !important;
         }
-        
-        * {
-          -webkit-touch-callout: none !important;
-          -webkit-user-select: none !important;
-          user-select: none !important;
-          touch-action: ${location.pathname === '/order' ? 'pan-y' : 'none'} !important;
-          -webkit-user-drag: none !important;
-          -ms-touch-action: none !important;
-        }
       `;
       document.head.appendChild(style);
 
-      // Блокируем все события touch
+      // Обработчик для блокировки всех жестов
       const preventDefault = (e: Event) => {
         if (location.pathname !== '/order' || (e as TouchEvent).touches?.length > 1) {
           e.preventDefault();
+          e.stopPropagation();
         }
       };
 
-      document.addEventListener('touchstart', preventDefault, { passive: false });
-      document.addEventListener('touchmove', preventDefault, { passive: false });
-      document.addEventListener('gesturestart', preventDefault, { passive: false });
-      document.addEventListener('gesturechange', preventDefault, { passive: false });
+      // Добавляем обработчики с capture phase для перехвата событий до их всплытия
+      document.addEventListener('touchstart', preventDefault, { passive: false, capture: true });
+      document.addEventListener('touchmove', preventDefault, { passive: false, capture: true });
+      document.addEventListener('gesturestart', preventDefault, { passive: false, capture: true });
+      document.addEventListener('gesturechange', preventDefault, { passive: false, capture: true });
+
+      // Добавляем обработчик для предотвращения закрытия свайпом
+      const preventClose = () => {
+        if (twa.isClosingConfirmationEnabled) {
+          return false;
+        }
+      };
+      
+      twa.onEvent('viewportChanged', preventClose);
 
       return () => {
-        document.removeEventListener('touchstart', preventDefault);
-        document.removeEventListener('touchmove', preventDefault);
-        document.removeEventListener('gesturestart', preventDefault);
-        document.removeEventListener('gesturechange', preventDefault);
+        document.removeEventListener('touchstart', preventDefault, { capture: true });
+        document.removeEventListener('touchmove', preventDefault, { capture: true });
+        document.removeEventListener('gesturestart', preventDefault, { capture: true });
+        document.removeEventListener('gesturechange', preventDefault, { capture: true });
+        twa.offEvent('viewportChanged', preventClose);
         style.remove();
       };
     }
