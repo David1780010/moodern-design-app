@@ -8,15 +8,15 @@ const Navigation = () => {
     <nav className="fixed bottom-8 left-1/2 transform -translate-x-1/2 w-[320px] h-[64px] bg-[#FDFCFC] border border-[#DBDBDB] rounded-3xl shadow-lg flex items-center justify-around px-6">
       <Link 
         to="/" 
-        className="relative flex items-center px-5 py-3"
+        className="relative flex items-center px-5 py-3 overflow-hidden"
       >
         {location.pathname === '/' && (
           <motion.div
             className="absolute inset-0 bg-black/10 rounded-xl"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.2 }}
           />
         )}
         <img 
@@ -27,15 +27,15 @@ const Navigation = () => {
       </Link>
       <Link 
         to="/order" 
-        className="relative flex items-center px-5 py-3"
+        className="relative flex items-center px-5 py-3 overflow-hidden"
       >
         {location.pathname === '/order' && (
           <motion.div
             className="absolute inset-0 bg-black/10 rounded-xl"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.2 }}
           />
         )}
         <img 
@@ -46,15 +46,15 @@ const Navigation = () => {
       </Link>
       <Link 
         to="/profile" 
-        className="relative flex items-center px-5 py-3"
+        className="relative flex items-center px-5 py-3 overflow-hidden"
       >
         {location.pathname === '/profile' && (
           <motion.div
             className="absolute inset-0 bg-black/10 rounded-xl"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.2 }}
           />
         )}
         <img 
