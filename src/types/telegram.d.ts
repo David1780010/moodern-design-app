@@ -41,6 +41,7 @@ declare namespace Telegram {
     BackButton: BackButton;
     platform: string;
     version: string;
+    setClosingBehavior: (params: { button: boolean; swipe: boolean }) => void;
     initData: string;
     initDataUnsafe: {
       user?: {

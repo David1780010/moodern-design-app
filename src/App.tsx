@@ -15,12 +15,8 @@ function AppContent() {
       twa.ready();
       twa.expand();
       
-      // Настраиваем MainButton для блокировки жестов
-      twa.MainButton.hide();
-      
-      // Включаем строгую блокировку закрытия
-      twa.enableClosingConfirmation();
-      twa.setBackgroundColor('#ffffff');
+      // Разрешаем закрытие только через кнопку, блокируем свайп
+      twa.setClosingBehavior({ button: true, swipe: false });
       
       // Блокируем все жесты свайпа
       const style = document.createElement('style');
@@ -59,27 +55,17 @@ function AppContent() {
         }
       };
 
-      // Добавляем обработчики с capture phase для перехвата событий до их всплытия
+      // Добавляем обработчики с capture phase для перехвата событий
       document.addEventListener('touchstart', preventDefault, { passive: false, capture: true });
       document.addEventListener('touchmove', preventDefault, { passive: false, capture: true });
       document.addEventListener('gesturestart', preventDefault, { passive: false, capture: true });
       document.addEventListener('gesturechange', preventDefault, { passive: false, capture: true });
-
-      // Добавляем обработчик для предотвращения закрытия свайпом
-      const preventClose = () => {
-        if (twa.isClosingConfirmationEnabled) {
-          return false;
-        }
-      };
-      
-      twa.onEvent('viewportChanged', preventClose);
 
       return () => {
         document.removeEventListener('touchstart', preventDefault, { capture: true });
         document.removeEventListener('touchmove', preventDefault, { capture: true });
         document.removeEventListener('gesturestart', preventDefault, { capture: true });
         document.removeEventListener('gesturechange', preventDefault, { capture: true });
-        twa.offEvent('viewportChanged', preventClose);
         style.remove();
       };
     }
