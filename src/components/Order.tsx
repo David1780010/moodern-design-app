@@ -15,28 +15,28 @@ const Order = () => {
       </h1>
 
       <div className="grid grid-cols-1 gap-6 max-w-[400px] mx-auto">
-        <div className="aspect-square rounded-[32px] bg-gradient-to-b from-[#D581FF]/70 to-white p-6 flex items-end shadow-lg">
+        <div className="aspect-square rounded-[48px] bg-gradient-to-b from-[#F2E7FF] via-[#F5EBFF] to-[#FFFFFF] p-6 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-center w-full">
             <span className="text-black font-['Unbounded'] text-xl">Stops</span>
             <span className="text-black font-['Unbounded'] text-xl">0%</span>
           </div>
         </div>
 
-        <div className="aspect-square rounded-[32px] bg-gradient-to-b from-[#ECCEFA]/70 to-white p-6 flex items-end shadow-lg">
+        <div className="aspect-square rounded-[48px] bg-gradient-to-b from-[#F2E7FF] via-[#F5EBFF] to-[#FFFFFF] p-6 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-center w-full">
             <span className="text-black font-['Unbounded'] text-xl">Stops</span>
             <span className="text-black font-['Unbounded'] text-xl">43%</span>
           </div>
         </div>
 
-        <div className="aspect-square rounded-[32px] bg-gradient-to-b from-[#D581FF]/70 to-white p-6 flex items-end shadow-lg">
+        <div className="aspect-square rounded-[48px] bg-gradient-to-b from-[#F2E7FF] via-[#F5EBFF] to-[#FFFFFF] p-6 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-center w-full">
             <span className="text-black font-['Unbounded'] text-xl">Stops</span>
             <span className="text-black font-['Unbounded'] text-xl">70%</span>
           </div>
         </div>
 
-        <div className="aspect-square rounded-[32px] bg-gradient-to-b from-[#EAEAEA]/70 to-white p-6 flex items-end shadow-lg">
+        <div className="aspect-square rounded-[48px] bg-gradient-to-b from-[#F2E7FF] via-[#F5EBFF] to-[#FFFFFF] p-6 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-center w-full">
             <span className="text-black font-['Unbounded'] text-xl">Stops</span>
             <span className="text-black font-['Unbounded'] text-xl">95%</span>
