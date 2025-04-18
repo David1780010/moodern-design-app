@@ -12,6 +12,7 @@ declare namespace Telegram {
     isExpanded: boolean;
     viewportHeight: number;
     viewportStableHeight: number;
+    setViewportHeight: (height: number) => void;
     initData: string;
     initDataUnsafe: {
       user?: {
