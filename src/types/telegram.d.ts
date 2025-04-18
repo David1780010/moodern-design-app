@@ -16,8 +16,14 @@ declare namespace Telegram {
   }
 }
 
+interface TelegramWebApp {
+  expand: () => void;
+  setBackgroundColor: (color: string) => void;
+  enableClosingConfirmation: () => void;
+}
+
 interface Window {
-  Telegram: {
-    WebApp: Telegram.WebApp;
+  Telegram?: {
+    WebApp: TelegramWebApp;
   };
 } 
