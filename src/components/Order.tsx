@@ -15,7 +15,7 @@ const Order = () => {
       </h1>
 
       <div className="grid grid-cols-1 gap-4 max-w-[480px] mx-auto">
-        <div className="h-[125px] rounded-[24px] bg-[linear-gradient(to_bottom,#EAEAEA_50%,#D581FF/60_50%)] p-4 flex flex-col">
+        <div className="h-[125px] rounded-[24px] bg-white p-4 flex flex-col">
           <div className="space-y-1 -mt-3">
             <h2 className="text-xl font-['Unbounded'] font-semibold">UI / UX design</h2>
             <p className="text-sm font-['Unbounded']">профессиональный дизайн который сделают быстро</p>
@@ -27,21 +27,21 @@ const Order = () => {
           </div>
         </div>
 
-        <div className="h-[125px] rounded-[24px] bg-[linear-gradient(to_bottom,#EAEAEA_50%,#D581FF/60_50%)] p-4 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+        <div className="h-[125px] rounded-[24px] bg-white p-4 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-center w-full">
             <span className="text-black font-['Unbounded'] text-lg">Stops</span>
             <span className="text-black font-['Unbounded'] text-lg">43%</span>
           </div>
         </div>
 
-        <div className="h-[125px] rounded-[24px] bg-[linear-gradient(to_bottom,#EAEAEA_50%,#D581FF/60_50%)] p-4 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+        <div className="h-[125px] rounded-[24px] bg-white p-4 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-center w-full">
             <span className="text-black font-['Unbounded'] text-lg">Stops</span>
             <span className="text-black font-['Unbounded'] text-lg">70%</span>
           </div>
         </div>
 
-        <div className="h-[125px] rounded-[24px] bg-[linear-gradient(to_bottom,#EAEAEA_50%,#D581FF/60_50%)] p-4 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+        <div className="h-[125px] rounded-[24px] bg-white p-4 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-center w-full">
             <span className="text-black font-['Unbounded'] text-lg">Stops</span>
             <span className="text-black font-['Unbounded'] text-lg">95%</span>
