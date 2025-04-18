@@ -33,14 +33,14 @@ const Profile = () => {
         баланс: {userBalance}$
       </p>
 
-      <div className="w-full max-w-[200px] space-y-3">
-        <button className="w-[200px] h-[48px] bg-black text-white rounded-xl text-base font-['Unbounded']">
+      <div className="w-full max-w-[220px] space-y-3">
+        <button className="w-[220px] h-[42px] bg-black text-white rounded-xl text-base font-['Unbounded']">
           ПОПОЛНИТЬ
         </button>
-        <button className="w-[200px] h-[48px] bg-black text-white rounded-xl text-base font-['Unbounded']">
+        <button className="w-[220px] h-[42px] bg-black text-white rounded-xl text-base font-['Unbounded']">
           ЗАКАЗАТЬ
         </button>
-        <button className="w-[200px] h-[48px] bg-black text-white rounded-xl text-base font-['Unbounded']">
+        <button className="w-[220px] h-[42px] bg-black text-white rounded-xl text-base font-['Unbounded']">
           ИСТОРИЯ ЗАКАЗОВ
         </button>
       </div>
