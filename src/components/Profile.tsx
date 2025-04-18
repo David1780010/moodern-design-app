@@ -34,13 +34,13 @@ const Profile = () => {
       </p>
 
       <div className="w-full max-w-[220px] space-y-3">
-        <button className="w-full bg-black text-white py-3 px-6 rounded-xl text-base">
+        <button className="w-[220px] h-[48px] bg-black text-white rounded-xl text-base font-['Unbounded']">
           ПОПОЛНИТЬ
         </button>
-        <button className="w-full bg-black text-white py-3 px-6 rounded-xl text-base">
+        <button className="w-[220px] h-[48px] bg-black text-white rounded-xl text-base font-['Unbounded']">
           ЗАКАЗАТЬ
         </button>
-        <button className="w-full bg-black text-white py-3 px-6 rounded-xl text-base">
+        <button className="w-[220px] h-[48px] bg-black text-white rounded-xl text-base font-['Unbounded']">
           ИСТОРИЯ ЗАКАЗОВ
         </button>
       </div>
