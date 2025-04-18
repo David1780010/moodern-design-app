@@ -11,7 +11,7 @@ const Order = () => {
       className="min-h-screen pt-32"
     >
       <h1 className="text-3xl font-bold text-black font-['Unbounded'] mb-16 text-center">
-        Заказать
+        Выберите нужную вам услугу
       </h1>
     </motion.div>
   );
