@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   return (
-    <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-[320px] h-[72px] bg-[#FDFCFC] border border-[#DBDBDB] rounded-3xl shadow-lg flex items-center justify-around px-6">
+    <nav className="fixed bottom-6 left-1/2 transform -translate-x-1/2 w-[320px] h-[72px] bg-[#FDFCFC] border border-[#DBDBDB] rounded-3xl shadow-lg flex items-center justify-around px-6">
       <Link to="/" className="flex flex-col items-center gap-1">
         <img 
           src="https://github.com/David1780010/moodern-design-app/blob/main/mooder-main.png?raw=true" 
