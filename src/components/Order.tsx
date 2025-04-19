@@ -8,46 +8,9 @@ const Order = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen pt-20 px-6"
+      className="min-h-screen bg-white flex items-center justify-center"
     >
-      <h1 className="text-2xl font-['Unbounded'] mb-8 text-center mt-1">
-        Выберите нужную вам услугу
-      </h1>
-
-      <div className="grid grid-cols-1 gap-4 max-w-[480px] mx-auto">
-        <div className="h-[125px] rounded-[24px] bg-gradient-to-b from-[#FFF5FF] to-[#FFE1FF] p-4 flex flex-col">
-          <div className="space-y-1 -mt-3">
-            <h2 className="text-xl font-['Unbounded'] font-semibold mt-1">UI / UX design</h2>
-            <p className="text-sm font-['Unbounded']">профессиональный дизайн который сделают быстро</p>
-          </div>
-          <div className="flex-grow flex items-end">
-            <button className="bg-black text-white font-['Unbounded'] text-sm py-[6px] px-6 rounded-lg w-fit">
-              заказать
-            </button>
-          </div>
-        </div>
-
-        <div className="h-[125px] rounded-[24px] bg-gradient-to-b from-[#FFF5FF] to-[#FFE1FF] p-4 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-          <div className="flex justify-between items-center w-full">
-            <span className="text-black font-['Unbounded'] text-lg">Stops</span>
-            <span className="text-black font-['Unbounded'] text-lg">43%</span>
-          </div>
-        </div>
-
-        <div className="h-[125px] rounded-[24px] bg-gradient-to-b from-[#FFF5FF] to-[#FFE1FF] p-4 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-          <div className="flex justify-between items-center w-full">
-            <span className="text-black font-['Unbounded'] text-lg">Stops</span>
-            <span className="text-black font-['Unbounded'] text-lg">70%</span>
-          </div>
-        </div>
-
-        <div className="h-[125px] rounded-[24px] bg-gradient-to-b from-[#FFF5FF] to-[#FFE1FF] p-4 flex items-end shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-          <div className="flex justify-between items-center w-full">
-            <span className="text-black font-['Unbounded'] text-lg">Stops</span>
-            <span className="text-black font-['Unbounded'] text-lg">95%</span>
-          </div>
-        </div>
-      </div>
+      <h1 className="text-6xl font-['Unbounded']">DH</h1>
     </motion.div>
   );
 };
