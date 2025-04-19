@@ -85,9 +85,9 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <div className="min-h-screen flex items-center justify-center">
+      DH
+    </div>
   );
 }
 
